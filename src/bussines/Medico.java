@@ -21,6 +21,8 @@ public class Medico {
 			Hora_medicaCriteria c = new Hora_medicaCriteria();
 			c.f_inicio.between(new Timestamp(f1.getTime()), new Timestamp(f2.getTime()));
 			c.hora_medica_reserva.isEmpty();
+			c.medicoId.eq(idMedico);
+			
 			List<orm.Hora_medica> horas = c.list();
 			for(int i=0; i<horas.size();i++){
 				HoraMedicaVo hmed = HoraMedicaVo.fromORM(horas.get(i));

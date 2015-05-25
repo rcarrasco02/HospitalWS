@@ -1,28 +1,28 @@
 package vo;
 
 public class MedicoVo {
-	private PersonaVo medico_personavo;
-	private EspecialidadVo medico_especialidadvo;
+	private PersonaVo persona;
+	private EspecialidadVo especialidad;
 	private int id;
 	
-	public MedicoVo(int id, PersonaVo medico_personavo,
-			EspecialidadVo medico_especialidadvo) {
+	public MedicoVo(int id, PersonaVo personavo,
+			EspecialidadVo especialidadvo) {
 		super();
 		this.id = id;
-		this.medico_personavo = medico_personavo;
-		this.medico_especialidadvo = medico_especialidadvo;
+		this.persona = personavo;
+		this.especialidad = especialidadvo;
 	}
 	
 	public int getId() {
 		return this.id;
 	}
 	
-	public PersonaVo getMedico_personavo() {
-		return medico_personavo;
+	public PersonaVo getPersona() {
+		return this.persona;
 	}
 
-	public EspecialidadVo getMedico_especialidadvo() {
-		return medico_especialidadvo;
+	public EspecialidadVo getEspecialidad() {
+		return this.especialidad;
 	}
 	
 	public static MedicoVo fromORM(orm.Medico m) {
