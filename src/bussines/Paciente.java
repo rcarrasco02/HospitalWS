@@ -62,7 +62,9 @@ public class Paciente {
 		try {
 			Hora_medicaCriteria c = new Hora_medicaCriteria();
 			c.f_inicio.between(new Timestamp(f1.getTime()), new Timestamp(f2.getTime()));
+			c.medicoId.eq(idMedico);
 			c.hora_medica_reserva.isEmpty();
+			
 			@SuppressWarnings("unchecked")
 			List<orm.Hora_medica> horas = c.list();
 			
